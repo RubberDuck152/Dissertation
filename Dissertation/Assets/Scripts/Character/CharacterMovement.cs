@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour
 
     public GameObject Weapon;
     public GameObject empowermentParticle;
+    public GameObject AbilityUI;
 
     public Transform cam;
 
@@ -17,6 +18,7 @@ public class CharacterMovement : MonoBehaviour
 
     public bool armed = false;
     private bool groundedPlayer;
+    private bool MenuTimer = false;
 
     public float playerSpeed = 2.0f;
     public float jumpHeight = 2.0f;
@@ -25,6 +27,9 @@ public class CharacterMovement : MonoBehaviour
     public float jumpForce;
     public int PlayerHP = 20;
     public int respawnTimer;
+
+    public string FirstAbilityButton;
+    public string AbilitySelectorMenu;
 
     private float gravityValue = -9.81f;
 
@@ -133,6 +138,11 @@ public class CharacterMovement : MonoBehaviour
                 }
             }
 
+            if (Input.GetButtonDown(FirstAbilityButton))
+            {
+                GetComponent<ActiveAbilitySlot>().ActivateEAbility = true;
+            }
+
             playerVelocity.y += gravityValue * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
             // Maintains the velocity whilst jumping however unable to change direction
@@ -143,6 +153,26 @@ public class CharacterMovement : MonoBehaviour
         {
             anim?.SetBool(hash.deathBool, true);
             StartCoroutine(Respawn());
+        }
+
+        if (MenuTimer == false && AbilityUI.activeSelf == false)
+        {
+            if (Input.GetButtonDown(AbilitySelectorMenu))
+            {
+                AbilityUI.SetActive(true);
+                MenuTimer = true;
+                StartCoroutine(MenuDelay());
+            }
+        }
+
+        if (AbilityUI.activeSelf == true && MenuTimer == false)
+        {
+            if (Input.GetButtonDown(AbilitySelectorMenu))
+            {
+                AbilityUI.SetActive(false);
+                MenuTimer = true;
+                StartCoroutine(MenuDelay());
+            }
         }
     }
 
@@ -156,5 +186,11 @@ public class CharacterMovement : MonoBehaviour
         yield return new WaitForSeconds(respawnTimer);
         PlayerHP = 20;
         anim?.SetBool(hash.deathBool, false);
+    }
+
+    IEnumerator MenuDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        MenuTimer = false;
     }
 }

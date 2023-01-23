@@ -318,8 +318,6 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
-"Assets/ActiveAbilitySlot.cs"
-"Assets/DraggableItem.cs"
 "Assets/ExplosiveLLC/Demo Elements/Code/CameraController.cs"
 "Assets/ExplosiveLLC/Demo Elements/Code/GUIControls.cs"
 "Assets/ExplosiveLLC/Demo Elements/Code/HighJumpTrampoline.cs"
@@ -364,10 +362,12 @@
 "Assets/ExplosiveLLC/SuperCharacterController/SuperCharacterController/Core/SuperStateMachine.cs"
 "Assets/ExplosiveLLC/SuperCharacterController/SuperCharacterController/DebugDraw.cs"
 "Assets/ExplosiveLLC/SuperCharacterController/SuperCharacterController/Math3d.cs"
-"Assets/Scripts/AbilityManager.cs"
-"Assets/Scripts/CharacterMovement.cs"
-"Assets/Scripts/FollowCamera.cs"
-"Assets/Scripts/Hashing.cs"
+"Assets/Scripts/Abilities/Shield.cs"
+"Assets/Scripts/AbilityManagement/ActiveAbilitySlot.cs"
+"Assets/Scripts/AbilityManagement/DraggableItem.cs"
+"Assets/Scripts/Character/CharacterMovement.cs"
+"Assets/Scripts/Character/FollowCamera.cs"
+"Assets/Scripts/Character/Hashing.cs"
 -langversion:8.0
 
 /deterministic
