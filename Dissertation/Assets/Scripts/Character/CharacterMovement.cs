@@ -33,6 +33,8 @@ public class CharacterMovement : MonoBehaviour
     public int respawnTimer;
 
     public string FirstAbilityButton;
+    public string SecondAbilityButton;
+    public string ThirdAbilityButton;
     public string AbilitySelectorMenu;
 
     private float gravityValue = -9.81f;
@@ -144,7 +146,29 @@ public class CharacterMovement : MonoBehaviour
 
             if (Input.GetButtonDown(FirstAbilityButton))
             {
-                AbilitySlot1.GetComponent<ActiveAbilitySlot>().ActivateEAbility = true;
+                AbilitySlot1.GetComponent<ActiveAbilitySlot1>().ActivateAbility = true;
+            }
+            else
+            {
+                AbilitySlot1.GetComponent<ActiveAbilitySlot1>().ActivateAbility = false;
+            }
+
+            if (Input.GetButtonDown(SecondAbilityButton))
+            {
+                AbilitySlot2.GetComponent<ActiveAbilitySlot2>().ActivateAbility = true;
+            }
+            else
+            {
+                AbilitySlot2.GetComponent<ActiveAbilitySlot2>().ActivateAbility = false;
+            }
+
+            if (Input.GetButtonDown(ThirdAbilityButton))
+            {
+                AbilitySlot3.GetComponent<ActiveAbilitySlot3>().ActivateAbility = true;
+            }
+            else
+            {
+                AbilitySlot3.GetComponent<ActiveAbilitySlot3>().ActivateAbility = false;
             }
 
             playerVelocity.y += gravityValue * Time.deltaTime;

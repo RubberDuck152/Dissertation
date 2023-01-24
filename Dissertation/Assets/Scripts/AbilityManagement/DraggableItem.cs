@@ -33,20 +33,20 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.raycastTarget = true;
         if (transform.parent.tag == "AbilitySlot1")
         {
-            AbilitySlot1.GetComponent<ActiveAbilitySlot>().AssignedAbilityClass = AssignedAbilityClass;
-            AbilitySlot1.GetComponent<ActiveAbilitySlot>().AssignedAbilityID = AssignedAbilityID;
+            AbilitySlot1.GetComponent<ActiveAbilitySlot1>().AssignedAbilityClass = AssignedAbilityClass;
+            AbilitySlot1.GetComponent<ActiveAbilitySlot1>().AssignedAbilityID = AssignedAbilityID;
         }
 
         if (transform.parent.tag == "AbilitySlot2")
         {
-            AbilitySlot2.GetComponent<ActiveAbilitySlot>().AssignedAbilityClass = AssignedAbilityClass;
-            AbilitySlot2.GetComponent<ActiveAbilitySlot>().AssignedAbilityID = AssignedAbilityID;
+            AbilitySlot2.GetComponent<ActiveAbilitySlot2>().AssignedAbilityClass = AssignedAbilityClass;
+            AbilitySlot2.GetComponent<ActiveAbilitySlot2>().AssignedAbilityID = AssignedAbilityID;
         }
 
         if (transform.parent.tag == "AbilitySlot3")
         {
-            AbilitySlot3.GetComponent<ActiveAbilitySlot>().AssignedAbilityClass = AssignedAbilityClass;
-            AbilitySlot3.GetComponent<ActiveAbilitySlot>().AssignedAbilityID = AssignedAbilityID;
+            AbilitySlot3.GetComponent<ActiveAbilitySlot3>().AssignedAbilityClass = AssignedAbilityClass;
+            AbilitySlot3.GetComponent<ActiveAbilitySlot3>().AssignedAbilityID = AssignedAbilityID;
         }
     }
 
