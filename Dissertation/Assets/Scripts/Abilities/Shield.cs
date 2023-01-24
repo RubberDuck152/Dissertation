@@ -7,11 +7,32 @@ public class Shield : MonoBehaviour
     public GameObject ShieldObject;
     public GameObject newShield;
 
-
+    [Header("Shield Variant 1 Stats")]
 
     public GameObject ShieldVariant1;
+    public float ShieldHealthVariant1;
+    public float ShieldHealthMaxVariant1;
+    public float ShieldDurationVariant1;
+    public float ShieldRespawnTimerVariant1;
+
+    [Header("Shield Variant 2 Stats")]
+
     public GameObject ShieldVariant2;
+    public float ShieldHealthVariant2;
+    public float ShieldHealthMaxVariant2;
+    public float ShieldDurationVariant2;
+    public float ShieldRespawnTimerVariant2;
+
+    [Header("Shield Variant 3 Stats")]
+
     public GameObject ShieldVariant3;
+    public float ShieldHealthVariant3;
+    public float ShieldHealthMaxVariant3;
+    public float ShieldDurationVariant3;
+    public float ShieldRespawnTimerVariant3;
+
+    [Header("Active Shield Health")]
+
     public float ShieldHealth;
     public float ShieldHealthMax;
     public float ShieldDuration;
@@ -28,12 +49,24 @@ public class Shield : MonoBehaviour
         {
             case 0:
                 ShieldObject = ShieldVariant1;
+                ShieldHealth = ShieldHealthVariant1;
+                ShieldHealthMax = ShieldHealthMaxVariant1;
+                ShieldDuration = ShieldDurationVariant1;
+                ShieldRespawnTimer = ShieldRespawnTimerVariant1;
                 break;
             case 1:
                 ShieldObject = ShieldVariant2;
+                ShieldHealth = ShieldHealthVariant2;
+                ShieldHealthMax = ShieldHealthMaxVariant2;
+                ShieldDuration = ShieldDurationVariant2;
+                ShieldRespawnTimer = ShieldRespawnTimerVariant2;
                 break;
             case 2:
                 ShieldObject = ShieldVariant3;
+                ShieldHealth = ShieldHealthVariant3;
+                ShieldHealthMax = ShieldHealthMaxVariant3;
+                ShieldDuration = ShieldDurationVariant3;
+                ShieldRespawnTimer = ShieldRespawnTimerVariant3;
                 break;
         }
     }

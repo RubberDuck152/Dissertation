@@ -362,6 +362,8 @@
 "Assets/ExplosiveLLC/SuperCharacterController/SuperCharacterController/Core/SuperStateMachine.cs"
 "Assets/ExplosiveLLC/SuperCharacterController/SuperCharacterController/DebugDraw.cs"
 "Assets/ExplosiveLLC/SuperCharacterController/SuperCharacterController/Math3d.cs"
+"Assets/InventorySlot.cs"
+"Assets/Scripts/Abilities/ActiveShield.cs"
 "Assets/Scripts/Abilities/Shield.cs"
 "Assets/Scripts/AbilityManagement/ActiveAbilitySlot.cs"
 "Assets/Scripts/AbilityManagement/DraggableItem.cs"

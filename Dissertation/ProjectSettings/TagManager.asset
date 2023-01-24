@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Enemy Target
   - AbilityList
-  - ActiveAbilitySlot
+  - Shield
+  - Abilities
+  - AbilitySlot1
+  - AbilitySlot2
+  - AbilitySlot3
   layers:
   - Default
   - TransparentFX

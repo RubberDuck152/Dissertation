@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Threading;
 
 public class CharacterMovement : MonoBehaviour
@@ -10,6 +11,9 @@ public class CharacterMovement : MonoBehaviour
     public GameObject Weapon;
     public GameObject empowermentParticle;
     public GameObject AbilityUI;
+    public Image AbilitySlot1;
+    public Image AbilitySlot2;
+    public Image AbilitySlot3;
 
     public Transform cam;
 
@@ -140,7 +144,7 @@ public class CharacterMovement : MonoBehaviour
 
             if (Input.GetButtonDown(FirstAbilityButton))
             {
-                GetComponent<ActiveAbilitySlot>().ActivateEAbility = true;
+                AbilitySlot1.GetComponent<ActiveAbilitySlot>().ActivateEAbility = true;
             }
 
             playerVelocity.y += gravityValue * Time.deltaTime;
@@ -160,6 +164,10 @@ public class CharacterMovement : MonoBehaviour
             if (Input.GetButtonDown(AbilitySelectorMenu))
             {
                 AbilityUI.SetActive(true);
+                AbilitySlot1.GetComponent<Image>().enabled = true;
+                AbilitySlot1.gameObject.GetComponentInChildren<Image>().enabled = true;
+                AbilitySlot2.GetComponent<Image>().enabled = true;
+                AbilitySlot3.GetComponent<Image>().enabled = true;
                 MenuTimer = true;
                 StartCoroutine(MenuDelay());
             }
@@ -170,6 +178,9 @@ public class CharacterMovement : MonoBehaviour
             if (Input.GetButtonDown(AbilitySelectorMenu))
             {
                 AbilityUI.SetActive(false);
+                AbilitySlot1.GetComponent<Image>().enabled = false;
+                AbilitySlot2.GetComponent<Image>().enabled = false;
+                AbilitySlot3.GetComponent<Image>().enabled = false;
                 MenuTimer = true;
                 StartCoroutine(MenuDelay());
             }

@@ -7,7 +7,14 @@ public class ActiveAbilitySlot : MonoBehaviour
     public int AssignedAbilityID;
     public string AssignedAbilityClass;
     public int AssignedAbilitySubID;
-    public bool ActivateEAbility = false;
+    public bool ActivateEAbility;
+
+    public GameObject AbilitiesScript;
+
+    private void Start()
+    {
+        ActivateEAbility = false;
+    }
 
     void Update()
     {
@@ -21,13 +28,16 @@ public class ActiveAbilitySlot : MonoBehaviour
                         switch(AssignedAbilitySubID)
                         {
                             case 0:
-                                GetComponent<Shield>().ChosenShield = 0;
+                                AbilitiesScript.GetComponent<Shield>().ChosenShield = 0;
+                                AbilitiesScript.GetComponent<Shield>().Activate = true;
                                 break;
                             case 1:
-                                GetComponent<Shield>().ChosenShield = 1;
+                                AbilitiesScript.GetComponent<Shield>().ChosenShield = 1;
+                                AbilitiesScript.GetComponent<Shield>().Activate = true;
                                 break;
                             case 2:
-                                GetComponent<Shield>().ChosenShield = 2;
+                                AbilitiesScript.GetComponent<Shield>().ChosenShield = 2;
+                                AbilitiesScript.GetComponent<Shield>().Activate = true;
                                 break;
                         }
                         break;

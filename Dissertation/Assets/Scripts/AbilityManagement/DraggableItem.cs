@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    Transform ParentAfterDrag;
-    bool collisionSlot = false;
+    public Image image;
+    public Image AbilitySlot1;
+    public Image AbilitySlot2;
+    public Image AbilitySlot3;
+    [HideInInspector] public Transform ParentAfterDrag;
     public int AssignedAbilityID;
     public string AssignedAbilityClass;
-    Collision lastCollision;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         ParentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
+        image.raycastTarget = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -26,19 +30,35 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(ParentAfterDrag);
-        if (collisionSlot == true)
+        image.raycastTarget = true;
+        if (transform.parent.tag == "AbilitySlot1")
         {
-            lastCollision.gameObject.GetComponent<ActiveAbilitySlot>().AssignedAbilityID = AssignedAbilityID;
-            lastCollision.gameObject.GetComponent<ActiveAbilitySlot>().AssignedAbilityClass = AssignedAbilityClass;
+            AbilitySlot1.GetComponent<ActiveAbilitySlot>().AssignedAbilityClass = AssignedAbilityClass;
+            AbilitySlot1.GetComponent<ActiveAbilitySlot>().AssignedAbilityID = AssignedAbilityID;
+        }
+
+        if (transform.parent.tag == "AbilitySlot2")
+        {
+            AbilitySlot2.GetComponent<ActiveAbilitySlot>().AssignedAbilityClass = AssignedAbilityClass;
+            AbilitySlot2.GetComponent<ActiveAbilitySlot>().AssignedAbilityID = AssignedAbilityID;
+        }
+
+        if (transform.parent.tag == "AbilitySlot3")
+        {
+            AbilitySlot3.GetComponent<ActiveAbilitySlot>().AssignedAbilityClass = AssignedAbilityClass;
+            AbilitySlot3.GetComponent<ActiveAbilitySlot>().AssignedAbilityID = AssignedAbilityID;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Update()
     {
-        if (collision.gameObject.tag == "ActiveAbilitySlot")
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().AbilityUI.activeSelf == true)
         {
-            collisionSlot = true;
-            lastCollision = collision;
+            GetComponent<Image>().enabled = true;
+        }
+        else
+        {
+            GetComponent<Image>().enabled = false;
         }
     }
 }
