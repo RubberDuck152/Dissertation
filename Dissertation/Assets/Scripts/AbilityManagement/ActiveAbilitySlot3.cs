@@ -8,6 +8,7 @@ public class ActiveAbilitySlot3 : MonoBehaviour
     public string AssignedAbilityClass;
     public int AssignedAbilitySubID;
     public bool ActivateAbility;
+    public bool dropdowntoggle;
 
     public GameObject AbilitiesScript;
 
@@ -19,9 +20,12 @@ public class ActiveAbilitySlot3 : MonoBehaviour
     [System.Obsolete]
     void Update()
     {
-        if (transform.GetChildCount() == 0)
+        if (dropdowntoggle == false)
         {
-            AssignedAbilityClass = null;
+            if (transform.GetChildCount() == 0)
+            {
+                AssignedAbilityClass = null;
+            }
         }
 
         if (ActivateAbility == true)

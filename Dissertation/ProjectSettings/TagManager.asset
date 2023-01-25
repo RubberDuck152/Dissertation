@@ -11,6 +11,7 @@ TagManager:
   - AbilitySlot1
   - AbilitySlot2
   - AbilitySlot3
+  - Terrain
   layers:
   - Default
   - TransparentFX

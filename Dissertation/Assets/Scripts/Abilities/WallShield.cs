@@ -6,6 +6,7 @@ public class WallShield : MonoBehaviour
 {
     public GameObject ShieldObject;
     public GameObject newShield;
+    public GameObject HoverPos;
 
     public float ShieldHealth;
     public float ShieldHealthMax;
@@ -29,7 +30,13 @@ public class WallShield : MonoBehaviour
                 Debug.Log("ShieldSpawned");
                 StartCoroutine(ShieldDurationTimer());
             }
-            newShield.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+            if (newShield != null)
+            {
+                newShield.transform.position = HoverPos.transform.position;
+                newShield.transform.rotation = HoverPos.transform.rotation;
+            }
+
             if (canSpawn == false)
             {
                 if (ShieldHealth <= 0)

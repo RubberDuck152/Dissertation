@@ -29,7 +29,11 @@ public class BubbleShield : MonoBehaviour
                 Debug.Log("ShieldSpawned");
                 StartCoroutine(ShieldDurationTimer());
             }
-            newShield.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+            if (newShield != null)
+            {
+                newShield.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0, 1, 0);
+            }
 
             if (canSpawn == false)
             {

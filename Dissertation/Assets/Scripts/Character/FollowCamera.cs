@@ -14,7 +14,6 @@ public class FollowCamera : MonoBehaviour
     public float MaxViewDistance = 15f;
     public float MinViewDistance = 1f;
     public int ZoomRate;
-    private int lerpRate = 5;
     private float distance = 3f;
     private float desireDistance;
     private float correctedDistance;
