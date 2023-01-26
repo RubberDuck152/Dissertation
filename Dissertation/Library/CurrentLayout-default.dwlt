@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 66
+  controlID: 19
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 67
+  controlID: 96
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 68
+  controlID: 97
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -215,8 +215,8 @@ MonoBehaviour:
     y: 0
     width: 1761
     height: 933
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 443
     height: 1307
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.034727573, y: 4.147995, z: 0.16643476}
+    m_Target: {x: 7.1313024, y: 1.0532529, z: -5.6545343}
     speed: 2
     m_Value: {x: -0.034727573, y: 4.147995, z: 0.16643476}
   m_RenderMode: 0
@@ -363,11 +363,11 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.12262055, y: 0.5025038, z: -0.07224438, w: 0.8527444}
+    m_Target: {x: 0.02052465, y: 0.9440181, z: -0.059843287, w: 0.3236641}
     speed: 2
-    m_Value: {x: 0.122624345, y: 0.50251937, z: -0.07224662, w: 0.8527708}
+    m_Value: {x: 0.122620545, y: 0.5025038, z: -0.07224438, w: 0.85274434}
   m_Size:
-    m_Target: 2.4786422
+    m_Target: 8.525333
     speed: 2
     m_Value: 2.4786422
   m_Ortho:
@@ -424,7 +424,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ce94ffff46fbffff52fbffff6253000006540000265400003e5400007a540000
+      m_ExpandedIDs: 48fbffff54fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -514,23 +514,23 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 1759
-      height: 891
-    m_Scale: {x: 0.825, y: 0.825}
-    m_Translation: {x: 879.5, y: 445.5}
+      height: 912
+    m_Scale: {x: 0.84444445, y: 0.84444445}
+    m_Translation: {x: 879.49994, y: 456}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1066.0607
+      x: -1041.5132
       y: -540
-      width: 2132.1213
+      width: 2083.0264
       height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.825
+  m_defaultScale: 0.84444445
   m_LastWindowPixelSize: {x: 1759, y: 912}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -661,22 +661,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Abilities
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Abilities
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Git Hub Repos\Dissertation\Dissertation
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 96580000
-    m_LastClickedID: 22678
-    m_ExpandedIDs: 000000009a5700009c570000aa57000000ca9a3b
+    m_SelectedIDs: 64580000
+    m_LastClickedID: 22628
+    m_ExpandedIDs: 00000000585800005a5800006858000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -704,7 +704,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a5700009c570000
+    m_ExpandedIDs: 00000000585800005a580000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

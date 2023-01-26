@@ -1041,6 +1041,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
+--- !u!1 &346093157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1466443717, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
+  m_PrefabInstance: {fileID: 346093156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &368472768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,6 +1943,9 @@ GameObject:
   - component: {fileID: 770747369}
   - component: {fileID: 770747372}
   - component: {fileID: 770747371}
+  - component: {fileID: 770747375}
+  - component: {fileID: 770747374}
+  - component: {fileID: 770747373}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Abilities
@@ -2020,6 +2028,70 @@ MonoBehaviour:
   ShieldRespawnTimer: 10
   canSpawn: 0
   Activate: 0
+--- !u!114 &770747373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770747368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c9e09d7473ed347bc682d8d4297036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileObject: {fileID: 515629606461861412, guid: 7b1a811d326071d48958989ca0443f58, type: 3}
+  newProjectile: {fileID: 0}
+  SpawnPos: {fileID: 346093157}
+  ProjectileDamage: 4
+  CooldownTime: 5
+  NoOfProjectiles: 4
+  DelayTime: 2
+  Delay: 0
+  canSpawn: 0
+  Activate: 0
+  Scale: {x: 0.6, y: 0.6, z: 0.6}
+--- !u!114 &770747374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770747368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdad77ac5fc2a3f49a1b8ecdb14fa364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileObject: {fileID: 515629606461861412, guid: 7b1a811d326071d48958989ca0443f58, type: 3}
+  newProjectile: {fileID: 0}
+  SpawnPos: {fileID: 346093157}
+  ProjectileDamage: 2
+  CooldownTime: 6
+  NoOfProjectiles: 25
+  canSpawn: 0
+  Activate: 0
+  Scale: {x: 0.25, y: 0.25, z: 0.25}
+--- !u!114 &770747375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770747368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fa0af4eee4fdd43bad712b4b259497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileObject: {fileID: 515629606461861412, guid: 7b1a811d326071d48958989ca0443f58, type: 3}
+  newProjectile: {fileID: 0}
+  SpawnPos: {fileID: 346093157}
+  ProjectileDamage: 10
+  CooldownTime: 3
+  canSpawn: 0
+  Activate: 0
+  Scale: {x: 1, y: 1, z: 1}
 --- !u!1 &788625038
 GameObject:
   m_ObjectHideFlags: 0

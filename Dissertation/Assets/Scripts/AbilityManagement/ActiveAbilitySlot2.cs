@@ -58,6 +58,26 @@ public class ActiveAbilitySlot2 : MonoBehaviour
             }
             else if (AssignedAbilityClass == "Damage")
             {
+                switch (AssignedAbilityID)
+                {
+                    case 0:
+                        switch (AssignedAbilitySubID)
+                        {
+                            case 0:
+                                AbilitiesScript.GetComponent<ProjectileBarrage>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 1:
+                                AbilitiesScript.GetComponent<SphereOfProjectiles>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 2:
+                                AbilitiesScript.GetComponent<ProjectileMinigun>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                        }
+                        break;
+                }
             }
             else if (AssignedAbilityClass == "Mobility")
             {

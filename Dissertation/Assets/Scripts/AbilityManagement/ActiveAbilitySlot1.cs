@@ -35,7 +35,7 @@ public class ActiveAbilitySlot1 : MonoBehaviour
                 switch (AssignedAbilityID)
                 {
                     case 0:
-                        switch(AssignedAbilitySubID)
+                        switch (AssignedAbilitySubID)
                         {
                             case 0:
                                 AbilitiesScript.GetComponent<DomeShield>().Activate = true;
@@ -51,13 +51,33 @@ public class ActiveAbilitySlot1 : MonoBehaviour
                                 break;
                         }
                         break;
-                } 
+                }
             }
             else if (AssignedAbilityClass == "Healing")
             {
             }
             else if (AssignedAbilityClass == "Damage")
             {
+                switch (AssignedAbilityID)
+                {
+                    case 0:
+                        switch (AssignedAbilitySubID)
+                        {
+                            case 0:
+                                AbilitiesScript.GetComponent<ProjectileBarrage>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 1:
+                                AbilitiesScript.GetComponent<SphereOfProjectiles>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 2:
+                                AbilitiesScript.GetComponent<ProjectileMinigun>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                        }
+                        break;
+                }
             }
             else if (AssignedAbilityClass == "Mobility")
             {
