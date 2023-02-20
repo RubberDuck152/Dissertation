@@ -29,7 +29,8 @@ public class CharacterMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     public float speedDampTime = 0.01f;
     public float jumpForce;
-    public int PlayerHP = 20;
+    public float CurrentPlayerHP;
+    public float MaxPlayerHP = 20.0f;
     public int respawnTimer;
 
     public string FirstAbilityButton;
@@ -54,7 +55,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (PlayerHP > 0)
+        if (CurrentPlayerHP > 0)
         {
             if (Input.GetButtonDown("Draw Weapon"))
             {
@@ -177,7 +178,7 @@ public class CharacterMovement : MonoBehaviour
             controller.Move(movementVector);
         }
 
-        if (PlayerHP <= 0)
+        if (CurrentPlayerHP <= 0)
         {
             anim?.SetBool(hash.deathBool, true);
             StartCoroutine(Respawn());
@@ -219,7 +220,7 @@ public class CharacterMovement : MonoBehaviour
     IEnumerator Respawn()
     {
         yield return new WaitForSeconds(respawnTimer);
-        PlayerHP = 20;
+        CurrentPlayerHP = 20;
         anim?.SetBool(hash.deathBool, false);
     }
 

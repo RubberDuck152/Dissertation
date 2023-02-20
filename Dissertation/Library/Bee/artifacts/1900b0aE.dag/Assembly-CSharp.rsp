@@ -366,6 +366,8 @@
 "Assets/Scripts/Abilities/BubbleShield.cs"
 "Assets/Scripts/Abilities/DomeShield.cs"
 "Assets/Scripts/Abilities/ExplosiveProjectile.cs"
+"Assets/Scripts/Abilities/HealingAOE.cs"
+"Assets/Scripts/Abilities/HealingZone.cs"
 "Assets/Scripts/Abilities/Projectile.cs"
 "Assets/Scripts/Abilities/ProjectileBarrage.cs"
 "Assets/Scripts/Abilities/ProjectileMiniGun.cs"

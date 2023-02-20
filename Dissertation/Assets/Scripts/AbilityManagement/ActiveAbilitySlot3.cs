@@ -55,6 +55,26 @@ public class ActiveAbilitySlot3 : MonoBehaviour
             }
             else if (AssignedAbilityClass == "Healing")
             {
+                switch (AssignedAbilityID)
+                {
+                    case 0:
+                        switch (AssignedAbilitySubID)
+                        {
+                            case 0:
+                                AbilitiesScript.GetComponent<HealingAOE>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 1:
+                                AbilitiesScript.GetComponent<ProjectileMiniGun>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 2:
+                                AbilitiesScript.GetComponent<ExplosiveProjectile>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                        }
+                        break;
+                }
             }
             else if (AssignedAbilityClass == "Damage")
             {

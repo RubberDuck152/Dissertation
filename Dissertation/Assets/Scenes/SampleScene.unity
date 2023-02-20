@@ -996,6 +996,10 @@ PrefabInstance:
       propertyPath: AbilitySlot3
       value: 
       objectReference: {fileID: 1991600891}
+    - target: {fileID: 1924656407, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
+      propertyPath: CurrentPlayerHP
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2098152757412381558, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1946,6 +1950,7 @@ GameObject:
   - component: {fileID: 770747375}
   - component: {fileID: 770747374}
   - component: {fileID: 770747373}
+  - component: {fileID: 770747376}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Abilities
@@ -2094,6 +2099,24 @@ MonoBehaviour:
   canSpawn: 0
   Activate: 0
   Scale: {x: 0.6, y: 0.6, z: 0.6}
+--- !u!114 &770747376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770747368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6078ac340d3c0a34e8446d9e1f223229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealingField: {fileID: 5438404433037862310, guid: f1127abb6997c654692f0e1da1c2cea4, type: 3}
+  SpawnPos: {fileID: 1605021162}
+  CooldownTime: 10
+  canSpawn: 0
+  Activate: 0
+  Scale: {x: 1, y: 1, z: 1}
 --- !u!1 &788625038
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,6 +4889,11 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1605021162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1466443718, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
+  m_PrefabInstance: {fileID: 346093156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1618313673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 417063218, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
