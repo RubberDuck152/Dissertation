@@ -68,11 +68,11 @@ public class ActiveAbilitySlot3 : MonoBehaviour
                                 ActivateAbility = false;
                                 break;
                             case 1:
-                                AbilitiesScript.GetComponent<SphereOfProjectiles>().Activate = true;
+                                AbilitiesScript.GetComponent<ProjectileMiniGun>().Activate = true;
                                 ActivateAbility = false;
                                 break;
                             case 2:
-                                AbilitiesScript.GetComponent<ProjectileMinigun>().Activate = true;
+                                AbilitiesScript.GetComponent<ExplosiveProjectile>().Activate = true;
                                 ActivateAbility = false;
                                 break;
                         }

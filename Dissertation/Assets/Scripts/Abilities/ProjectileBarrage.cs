@@ -5,11 +5,13 @@ using UnityEngine;
 public class ProjectileBarrage : MonoBehaviour
 {
     public GameObject ProjectileObject;
-    public GameObject newProjectile;
-    public GameObject SpawnPos;
+    public Transform SpawnPos;
+    public Transform cam;
 
     public float ProjectileDamage;
     public float CooldownTime;
+    public float MovementSpeedX;
+    public float MovementSpeedY;
     public bool canSpawn;
     public bool Activate;
     public Vector3 Scale;
@@ -35,13 +37,12 @@ public class ProjectileBarrage : MonoBehaviour
 
     void InitProjectile()
     {
-        newProjectile = Instantiate(ProjectileObject);
+        GameObject newProjectile = Instantiate(ProjectileObject, SpawnPos.position, cam.rotation);
         newProjectile.transform.localScale = Scale;
 
-        newProjectile.GetComponent<Projectile>().transform.position = SpawnPos.transform.position;
+        Vector3 movement = cam.transform.forward * MovementSpeedX + transform.up * MovementSpeedY;
 
-        newProjectile.GetComponent<Projectile>().MovementSpeed = (GameObject.FindGameObjectWithTag("Player").transform.forward * Time.deltaTime).normalized * 0.25f;
-
+        newProjectile.GetComponent<Rigidbody>().AddForce(movement, ForceMode.Impulse);
         newProjectile.GetComponent<Projectile>().DamageValue = ProjectileDamage;
     }
 

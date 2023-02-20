@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileMinigun : MonoBehaviour
+public class ProjectileMiniGun : MonoBehaviour
 {
     public GameObject ProjectileObject;
-    public GameObject newProjectile;
-    public GameObject SpawnPos;
+    public Transform SpawnPos;
+    public Transform cam;
 
     public float ProjectileDamage;
     public float CooldownTime;
-    public int NoOfProjectiles;
-    public float DelayTime;
-    public bool Delay;
+    public float MovementSpeedX;
+    public float MovementSpeedY;
     public bool canSpawn;
     public bool Activate;
     public Vector3 Scale;
@@ -38,29 +37,13 @@ public class ProjectileMinigun : MonoBehaviour
 
     void InitProjectile()
     {
-        int i = 0;
-        while (i < NoOfProjectiles)
-        {
-            if (Delay == false)
-            {
-                newProjectile = Instantiate(ProjectileObject);
-                newProjectile.transform.localScale = Scale;
+        GameObject newProjectile = Instantiate(ProjectileObject, SpawnPos.position, cam.rotation);
+        newProjectile.transform.localScale = Scale;
 
-                newProjectile.GetComponent<Projectile>().transform.position = SpawnPos.transform.position;
+        Vector3 movement = cam.transform.forward * MovementSpeedX + transform.up * MovementSpeedY;
 
-                newProjectile.GetComponent<Projectile>().MovementSpeed = (GameObject.FindGameObjectWithTag("Player").transform.forward * Time.deltaTime).normalized * 0.25f;
-
-                newProjectile.GetComponent<Projectile>().DamageValue = ProjectileDamage;
-                Delay = true;
-                StartCoroutine(DelayTimer());
-            }
-        }
-    }
-
-    IEnumerator DelayTimer()
-    {
-        yield return new WaitForSeconds(DelayTime);
-        Delay = false;
+        newProjectile.GetComponent<Rigidbody>().AddForce(movement, ForceMode.Impulse);
+        newProjectile.GetComponent<Projectile>().DamageValue = ProjectileDamage;
     }
 
     IEnumerator CooldownTimer()

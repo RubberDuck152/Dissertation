@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Vector3 MovementSpeed;
     public float DamageValue;
     public float DelayTime;
+    public float radius;
+    public float explosionForce;
+    public bool explosive;
 
     void Update()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(MovementSpeed, ForceMode.Impulse);
         StartCoroutine(DestroyObject());
     }
 
@@ -18,5 +19,28 @@ public class Projectile : MonoBehaviour
     {
         yield return new WaitForSeconds(DelayTime);
         Destroy(gameObject);
+    }
+
+    void Explosion()
+    {
+        if (explosive)
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+
+            foreach (Collider closeObject in colliders)
+            {
+                Rigidbody rb = closeObject.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.AddExplosionForce(explosionForce, transform.position, radius);
+                    Destroy(gameObject);
+                }
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Explosion();
     }
 }
