@@ -65,7 +65,7 @@ public class ActiveAbilitySlot1 : MonoBehaviour
                                 ActivateAbility = false;
                                 break;
                             case 1:
-                                AbilitiesScript.GetComponent<ProjectileMiniGun>().Activate = true;
+                                AbilitiesScript.GetComponent<CenteredHealingDome>().Activate = true;
                                 ActivateAbility = false;
                                 break;
                             case 2:

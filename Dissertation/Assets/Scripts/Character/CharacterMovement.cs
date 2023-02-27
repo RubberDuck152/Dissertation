@@ -28,7 +28,6 @@ public class CharacterMovement : MonoBehaviour
     public float jumpHeight = 2.0f;
     public float turnSmoothTime = 0.1f;
     public float speedDampTime = 0.01f;
-    public float jumpForce;
     public float CurrentPlayerHP;
     public float MaxPlayerHP = 20.0f;
     public int respawnTimer;

@@ -31,8 +31,6 @@ public class ProjectileBarrage : MonoBehaviour
         {
             canSpawn = true;
         }
-
-        Debug.Log(Activate);
     }
 
     void InitProjectile()

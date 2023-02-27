@@ -364,6 +364,7 @@
 "Assets/ExplosiveLLC/SuperCharacterController/SuperCharacterController/Math3d.cs"
 "Assets/Scripts/Abilities/ActiveShield.cs"
 "Assets/Scripts/Abilities/BubbleShield.cs"
+"Assets/Scripts/Abilities/CenteredHealingDome.cs"
 "Assets/Scripts/Abilities/DomeShield.cs"
 "Assets/Scripts/Abilities/ExplosiveProjectile.cs"
 "Assets/Scripts/Abilities/HealingAOE.cs"

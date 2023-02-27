@@ -35,6 +35,12 @@ public class Projectile : MonoBehaviour
                     rb.AddExplosionForce(explosionForce, transform.position, radius);
                     Destroy(gameObject);
                 }
+
+                if (closeObject.tag == "Player")
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().CurrentPlayerHP -= DamageValue/2;
+                    Destroy(gameObject);
+                }
             }
         }
     }
@@ -42,5 +48,11 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Explosion();
+
+        if (collision.gameObject.tag == "Player")
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().CurrentPlayerHP -= DamageValue;
+            StartCoroutine(DestroyObject());
+        }
     }
 }

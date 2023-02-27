@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HealingZone : MonoBehaviour
 {
-    bool CanHeal = false;
+    public bool CanHeal = false;
+    public bool TickHealing = true;
     public float HealAmount;
     public float FieldDuration;
     public float HealIntervals;
@@ -16,20 +17,48 @@ public class HealingZone : MonoBehaviour
     void Update()
     {
         StartCoroutine(DestroyField());
+        if (CanHeal == true)
+        {
+            if (TickHealing == true)
+            {
+                if (player.GetComponent<CharacterMovement>().CurrentPlayerHP < player.GetComponent<CharacterMovement>().MaxPlayerHP)
+                {
+                    StartCoroutine(HealReset());
+                }
+            }
+        }
+    }
+
+    IEnumerator HealReset()
+    {
+        TickHealing = false;
+        player.GetComponent<CharacterMovement>().CurrentPlayerHP += HealAmount;
+        yield return new WaitForSeconds(HealIntervals);
+        TickHealing = true;
+        Debug.Log("Heal reset");
+    }
+
+    IEnumerator DestroyField()
+    {
+        yield return new WaitForSeconds(FieldDuration);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Heal();
+            CanHeal = true;
+            Debug.Log("Healing is true");
         }
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
-            Heal();
+            CanHeal = true;
+            Debug.Log("Healing is true");
         }
     }
 
@@ -37,31 +66,8 @@ public class HealingZone : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Heal();
+            CanHeal = false;
+            Debug.Log("Healing is false");
         }
-    }
-
-    void Heal()
-    {
-        if (CanHeal == true)
-        {
-            if (player.GetComponent<CharacterMovement>().CurrentPlayerHP < player.GetComponent<CharacterMovement>().MaxPlayerHP)
-            {
-                player.GetComponent<CharacterMovement>().CurrentPlayerHP += HealAmount;
-                StartCoroutine(HealReset());
-            }
-        }
-    }
-
-    IEnumerator HealReset()
-    {
-        yield return new WaitForSeconds(HealIntervals);
-        CanHeal = true;
-    }
-
-    IEnumerator DestroyField()
-    {
-        yield return new WaitForSeconds(FieldDuration);
-        Destroy(gameObject);
     }
 }

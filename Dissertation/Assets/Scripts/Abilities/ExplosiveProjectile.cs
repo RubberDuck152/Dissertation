@@ -31,8 +31,6 @@ public class ExplosiveProjectile : MonoBehaviour
         {
             canSpawn = true;
         }
-
-        Debug.Log(Activate);
     }
 
     void InitProjectile()

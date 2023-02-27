@@ -26,8 +26,6 @@ public class HealingAOE : MonoBehaviour
         {
             canSpawn = true;
         }
-
-        Debug.Log(Activate);
     }
 
     void InitField()

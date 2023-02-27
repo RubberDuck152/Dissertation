@@ -83,6 +83,25 @@ public class DropdownMenu : MonoBehaviour
                 AbilitySlot3.GetComponent<ActiveAbilitySlot3>().AssignedAbilityID = 0;
                 AbilitySlot3.GetComponent<ActiveAbilitySlot3>().AssignedAbilityClass = "Damage";
                 break;
+            case 3:
+                AbilitySlot1.GetComponent<ActiveAbilitySlot1>().dropdowntoggle = true;
+                AbilitySlot1.GetComponent<ActiveAbilitySlot1>().AssignedAbilitySubID = 0;
+                Slider1.value = AbilitySlot1.GetComponent<ActiveAbilitySlot1>().AssignedAbilitySubID;
+                AbilitySlot1.GetComponent<ActiveAbilitySlot1>().AssignedAbilityID = 0;
+                AbilitySlot1.GetComponent<ActiveAbilitySlot1>().AssignedAbilityClass = "Healing";
+
+                AbilitySlot2.GetComponent<ActiveAbilitySlot2>().dropdowntoggle = true;
+                AbilitySlot2.GetComponent<ActiveAbilitySlot2>().AssignedAbilitySubID = 1;
+                Slider2.value = AbilitySlot2.GetComponent<ActiveAbilitySlot2>().AssignedAbilitySubID;
+                AbilitySlot2.GetComponent<ActiveAbilitySlot2>().AssignedAbilityID = 0;
+                AbilitySlot2.GetComponent<ActiveAbilitySlot2>().AssignedAbilityClass = "Healing";
+
+                AbilitySlot3.GetComponent<ActiveAbilitySlot3>().dropdowntoggle = true;
+                AbilitySlot3.GetComponent<ActiveAbilitySlot3>().AssignedAbilitySubID = 2;
+                Slider3.value = AbilitySlot3.GetComponent<ActiveAbilitySlot3>().AssignedAbilitySubID;
+                AbilitySlot3.GetComponent<ActiveAbilitySlot3>().AssignedAbilityID = 0;
+                AbilitySlot3.GetComponent<ActiveAbilitySlot3>().AssignedAbilityClass = "Healing";
+                break;
         }
     }
 }

@@ -31,8 +31,6 @@ public class ProjectileMiniGun : MonoBehaviour
         {
             canSpawn = true;
         }
-
-        Debug.Log(Activate);
     }
 
     void InitProjectile()

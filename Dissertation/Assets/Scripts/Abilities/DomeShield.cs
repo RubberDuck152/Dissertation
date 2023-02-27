@@ -48,8 +48,6 @@ public class DomeShield : MonoBehaviour
             canSpawn = true;
             ShieldHealth = ShieldHealthMax;
         }
-
-        Debug.Log(Activate);
     }
 
     IEnumerator ShieldDurationTimer()
@@ -67,6 +65,15 @@ public class DomeShield : MonoBehaviour
         canSpawn = true;
         Activate = false;
         ShieldHealth = ShieldHealthMax;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "EnemyProjectile")
+        {
+            ShieldHealth = ShieldHealth - gameObject.GetComponent<Projectile>().DamageValue;
+            Destroy(other.gameObject);
+        }
     }
 }
 
