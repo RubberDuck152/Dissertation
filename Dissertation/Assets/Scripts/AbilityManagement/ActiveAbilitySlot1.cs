@@ -69,7 +69,7 @@ public class ActiveAbilitySlot1 : MonoBehaviour
                                 ActivateAbility = false;
                                 break;
                             case 2:
-                                AbilitiesScript.GetComponent<ExplosiveProjectile>().Activate = true;
+                                AbilitiesScript.GetComponent<HealingTether>().Activate = true;
                                 ActivateAbility = false;
                                 break;
                         }
