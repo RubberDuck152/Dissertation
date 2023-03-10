@@ -392,6 +392,7 @@
 "Assets/Scripts/Character/FollowCamera.cs"
 "Assets/Scripts/Character/Hashing.cs"
 "Assets/Scripts/Character/HealthBar.cs"
+"Assets/Scripts/Enemy.cs"
 "Assets/Scripts/InventorySlot.cs"
 -langversion:8.0
 

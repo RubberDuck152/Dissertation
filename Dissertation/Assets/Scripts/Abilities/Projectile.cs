@@ -40,6 +40,7 @@ public class Projectile : MonoBehaviour
                 {
                     GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().CurrentPlayerHP -= DamageValue/2;
                     Destroy(gameObject);
+                    DelayTime = 0;
                 }
             }
         }
@@ -53,6 +54,7 @@ public class Projectile : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().CurrentPlayerHP -= DamageValue;
             StartCoroutine(DestroyObject());
+            DelayTime = 0;
         }
     }
 }

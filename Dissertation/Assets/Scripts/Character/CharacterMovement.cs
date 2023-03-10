@@ -30,6 +30,8 @@ public class CharacterMovement : MonoBehaviour
     public float speedDampTime = 0.01f;
     public float CurrentPlayerHP;
     public float MaxPlayerHP = 20.0f;
+    public float SwordDMG;
+    public float FistDMG;
     public int respawnTimer;
 
     public string FirstAbilityButton;
