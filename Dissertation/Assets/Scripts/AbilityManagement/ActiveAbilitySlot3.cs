@@ -111,7 +111,7 @@ public class ActiveAbilitySlot3 : MonoBehaviour
                                 ActivateAbility = false;
                                 break;
                             case 1:
-                                AbilitiesScript.GetComponent<ProjectileMiniGun>().Activate = true;
+                                AbilitiesScript.GetComponent<Teleporting>().Activate = true;
                                 ActivateAbility = false;
                                 break;
                             case 2:
@@ -124,6 +124,26 @@ public class ActiveAbilitySlot3 : MonoBehaviour
             }
             else if (AssignedAbilityClass == "Utility")
             {
+                switch (AssignedAbilityID)
+                {
+                    case 0:
+                        switch (AssignedAbilitySubID)
+                        {
+                            case 0:
+                                AbilitiesScript.GetComponent<TerrainSpawnerWall>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 1:
+                                AbilitiesScript.GetComponent<TerrainSpawnerFloor>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 2:
+                                AbilitiesScript.GetComponent<TerrainSpawnerRamp>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                        }
+                        break;
+                }
             }
         }
     }

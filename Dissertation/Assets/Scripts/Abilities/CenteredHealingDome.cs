@@ -10,7 +10,6 @@ public class CenteredHealingDome : MonoBehaviour
     public float CooldownTime;
     public bool canSpawn;
     public bool Activate;
-    public Vector3 Scale;
 
     void Update()
     {

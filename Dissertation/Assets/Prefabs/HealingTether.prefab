@@ -4881,8 +4881,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3814ed665a82aef4385108895795fda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanHeal: 0
+  CanHealPlayer: 0
+  CanHealAlly: 0
   TickHealing: 1
   HealAmount: 2
-  FieldDuration: 1000
+  FieldDuration: 8
   HealIntervals: 1

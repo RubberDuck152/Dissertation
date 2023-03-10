@@ -376,6 +376,10 @@
 "Assets/Scripts/Abilities/Projectile.cs"
 "Assets/Scripts/Abilities/ProjectileBarrage.cs"
 "Assets/Scripts/Abilities/ProjectileMiniGun.cs"
+"Assets/Scripts/Abilities/Teleporting.cs"
+"Assets/Scripts/Abilities/TerrainSpawnerFloor.cs"
+"Assets/Scripts/Abilities/TerrainSpawnerRamp.cs"
+"Assets/Scripts/Abilities/TerrainSpawnerWall.cs"
 "Assets/Scripts/Abilities/WallShield.cs"
 "Assets/Scripts/AbilityManagement/AbilityVariantSlider.cs"
 "Assets/Scripts/AbilityManagement/ActiveAbilitySlot1.cs"
@@ -387,6 +391,7 @@
 "Assets/Scripts/Character/CharacterMovement.cs"
 "Assets/Scripts/Character/FollowCamera.cs"
 "Assets/Scripts/Character/Hashing.cs"
+"Assets/Scripts/Character/HealthBar.cs"
 "Assets/Scripts/InventorySlot.cs"
 -langversion:8.0
 
