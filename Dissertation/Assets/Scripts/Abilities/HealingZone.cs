@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HealingZone : MonoBehaviour
 {
-    public bool CanHeal = false;
+    public bool CanHealPlayer = false;
+    public bool CanHealAlly = false;
     public bool TickHealing = true;
     public float HealAmount;
     public float FieldDuration;
@@ -17,7 +18,18 @@ public class HealingZone : MonoBehaviour
     void Update()
     {
         StartCoroutine(DestroyField());
-        if (CanHeal == true)
+        if (CanHealPlayer == true)
+        {
+            if (TickHealing == true)
+            {
+                if (player.GetComponent<CharacterMovement>().CurrentPlayerHP < player.GetComponent<CharacterMovement>().MaxPlayerHP)
+                {
+                    StartCoroutine(HealReset());
+                }
+            }
+        }
+
+        if (CanHealAlly == true)
         {
             if (TickHealing == true)
             {
@@ -48,7 +60,13 @@ public class HealingZone : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            CanHeal = true;
+            CanHealPlayer = true;
+            Debug.Log("Healing is true");
+        }
+
+        if (other.tag == "Ally")
+        {
+            CanHealAlly = true;
             Debug.Log("Healing is true");
         }
     }
@@ -57,7 +75,13 @@ public class HealingZone : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            CanHeal = true;
+            CanHealPlayer = true;
+            Debug.Log("Healing is true");
+        }
+
+        if (other.tag == "Ally")
+        {
+            CanHealAlly = true;
             Debug.Log("Healing is true");
         }
     }
@@ -66,7 +90,13 @@ public class HealingZone : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            CanHeal = false;
+            CanHealPlayer = false;
+            Debug.Log("Healing is false");
+        }
+
+        if (other.tag == "Ally")
+        {
+            CanHealAlly = false;
             Debug.Log("Healing is false");
         }
     }

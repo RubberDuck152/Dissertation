@@ -88,6 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ea01a41ff271049b6958195887770d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
+  AbilitySlot1: {fileID: 0}
+  AbilitySlot2: {fileID: 0}
+  AbilitySlot3: {fileID: 0}
   ParentAfterDrag: {fileID: 0}
   AssignedAbilityID: 0
   AssignedAbilityClass: 
