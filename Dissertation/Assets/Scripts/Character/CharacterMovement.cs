@@ -21,7 +21,7 @@ public class CharacterMovement : MonoBehaviour
     private Hashing hash;
 
     public bool armed = false;
-    private bool groundedPlayer;
+    public bool groundedPlayer;
     private bool MenuTimer = false;
 
     public float playerSpeed = 2.0f;
@@ -41,8 +41,10 @@ public class CharacterMovement : MonoBehaviour
 
     float turnSmoothVelocity;
 
+    public Vector3 moveDir;
+
     private Vector3 movementVector;
-    private Vector3 playerVelocity;
+    public Vector3 playerVelocity;
 
     private void Awake()
     {
@@ -86,7 +88,7 @@ public class CharacterMovement : MonoBehaviour
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                 controller.Move(moveDir.normalized * playerSpeed * Time.deltaTime);
                 anim?.SetBool(hash.movingBool, true);
             }

@@ -101,6 +101,26 @@ public class ActiveAbilitySlot1 : MonoBehaviour
             }
             else if (AssignedAbilityClass == "Mobility")
             {
+                switch (AssignedAbilityID)
+                {
+                    case 0:
+                        switch (AssignedAbilitySubID)
+                        {
+                            case 0:
+                                AbilitiesScript.GetComponent<Dash>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 1:
+                                AbilitiesScript.GetComponent<ProjectileMiniGun>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                            case 2:
+                                AbilitiesScript.GetComponent<Flying>().Activate = true;
+                                ActivateAbility = false;
+                                break;
+                        }
+                        break;
+                }
             }
             else if (AssignedAbilityClass == "Utility")
             {

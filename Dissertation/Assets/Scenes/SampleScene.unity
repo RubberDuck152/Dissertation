@@ -1075,6 +1075,10 @@ PrefabInstance:
       propertyPath: CurrentPlayerHP
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1924656408, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2098152757412381558, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2130,6 +2134,8 @@ GameObject:
   - component: {fileID: 770747376}
   - component: {fileID: 770747377}
   - component: {fileID: 770747378}
+  - component: {fileID: 770747379}
+  - component: {fileID: 770747380}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Abilities
@@ -2334,6 +2340,41 @@ MonoBehaviour:
   canSpawn: 0
   Activate: 0
   TargetAlly: 0
+--- !u!114 &770747379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770747368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2323922c07b5542409336d568b4606f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CooldownTime: 2.5
+  canDash: 0
+  Activate: 0
+  dashForce: 10
+  dashForceUp: 0.5
+  dashDuration: 1
+  orientation: {fileID: 2078485895}
+  cam: {fileID: 963194227}
+--- !u!114 &770747380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770747368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7a0ae073002394b9fda26b0a850b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CooldownTime: 6
+  canFly: 0
+  Activate: 0
 --- !u!1 &788625038
 GameObject:
   m_ObjectHideFlags: 0
@@ -6406,6 +6447,11 @@ RectTransform:
 --- !u!1 &2078485894 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2098152757412618006, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
+  m_PrefabInstance: {fileID: 346093156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2078485895 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2098152757412381558, guid: c308a2d9cfff62041ae7874ac19e7b6c, type: 3}
   m_PrefabInstance: {fileID: 346093156}
   m_PrefabAsset: {fileID: 0}
 --- !u!136 &2078485899
