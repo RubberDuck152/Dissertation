@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 752650591425600048}
   - component: {fileID: 752650591425600051}
   - component: {fileID: 752650591425600050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DomeShield
-  m_TagString: Shield
+  m_TagString: DomeShield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -6,13 +6,15 @@ TagManager:
   tags:
   - Enemy Target
   - AbilityList
-  - Shield
   - Abilities
   - AbilitySlot1
   - AbilitySlot2
   - AbilitySlot3
   - Terrain
   - Ally
+  - DomeShield
+  - WallShield
+  - BubbleShield
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - UI
   - Ally
   - Terrain
-  - 
+  - Shield
   - 
   - 
   - 

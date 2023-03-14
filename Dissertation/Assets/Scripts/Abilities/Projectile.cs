@@ -50,9 +50,33 @@ public class Projectile : MonoBehaviour
     {
         Explosion();
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.layer == 6)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().CurrentPlayerHP -= DamageValue;
+            collision.gameObject.GetComponent<CharacterMovement>().CurrentPlayerHP -= DamageValue;
+            StartCoroutine(DestroyObject());
+            DelayTime = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            if (other.tag == "BubbleShield")
+            {
+                GameObject.FindGameObjectWithTag("Abilities").GetComponent<BubbleShield>().ShieldHealth -= DamageValue;
+            }
+
+            if (other.tag == "WallShield")
+            {
+                GameObject.FindGameObjectWithTag("Abilities").GetComponent<WallShield>().ShieldHealth -= DamageValue;
+            }
+
+            if (other.tag == "DomeShield")
+            {
+                GameObject.FindGameObjectWithTag("Abilities").GetComponent<DomeShield>().ShieldHealth -= DamageValue;
+            }
+
             StartCoroutine(DestroyObject());
             DelayTime = 0;
         }

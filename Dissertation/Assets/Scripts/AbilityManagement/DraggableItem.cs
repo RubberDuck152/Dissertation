@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Image image;
+    public RawImage image;
     public Image AbilitySlot1;
     public Image AbilitySlot2;
     public Image AbilitySlot3;
@@ -54,11 +54,11 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         if (GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().AbilityUI.activeSelf == true)
         {
-            GetComponent<Image>().enabled = true;
+            GetComponent<RawImage>().enabled = true;
         }
         else
         {
-            GetComponent<Image>().enabled = false;
+            GetComponent<RawImage>().enabled = false;
         }
     }
 }

@@ -8,7 +8,7 @@ public class Flying : MonoBehaviour
     public bool canFly;
     public bool Activate;
     public float maxFlightTime;
-    float flightTime = 0;
+    public float tempPlayerSpeed;
     bool isFlying;
     
     CharacterController charControls;
@@ -32,7 +32,6 @@ public class Flying : MonoBehaviour
             if (canFly == true)
             {
                 anim.applyRootMotion = false;
-                canFly = false;
                 isFlying = true;
                 StartCoroutine(Flight());
                 StartCoroutine(CooldownTimer());
@@ -46,35 +45,33 @@ public class Flying : MonoBehaviour
 
     IEnumerator Flight()
     {
-        while (isFlying)
+        if (isFlying)
         {
+            Vector3 cancelGravity = new Vector3(0f, 9.81f, 0f);
             charMove.groundedPlayer = true;
-            if (Input.GetButtonDown("Jump"))
+            charMove.playerSpeed = tempPlayerSpeed;
+            if (Input.GetButton("Jump"))
             {
-                Vector3 cancelGravity = new Vector3(0f, 9.81f, 0f);
+                cancelGravity = new Vector3(0f, 9.81f, 0f);
                 charControls.Move(cancelGravity * Time.deltaTime);
             }
             Debug.Log(charControls.velocity);
-            if (Input.GetButtonDown("Crouch"))
+            if (Input.GetButton("Crouch"))
             {
-                Vector3 cancelGravity = new Vector3(0f, -9.81f, 0f);
+                cancelGravity = new Vector3(0f, -9.81f, 0f);
                 charControls.Move(cancelGravity * Time.deltaTime);
             }
             yield return null;
-
-            flightTime += Time.deltaTime;
-            if (flightTime >= maxFlightTime)
-            {
-                isFlying = false;
-            }
         }
     }
 
     IEnumerator CooldownTimer()
     {
         yield return new WaitForSeconds(CooldownTime);
-        canFly = true;
+        isFlying = false;
+        canFly = false;
         Activate = false;
         anim.applyRootMotion = true;
+        charMove.playerSpeed = 2.0f;
     }
 }

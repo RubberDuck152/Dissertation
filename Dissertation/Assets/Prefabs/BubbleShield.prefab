@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4707449077649035921}
   - component: {fileID: 4102353851074300621}
   - component: {fileID: 4915241885418731070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BubbleShield
-  m_TagString: Shield
+  m_TagString: BubbleShield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
