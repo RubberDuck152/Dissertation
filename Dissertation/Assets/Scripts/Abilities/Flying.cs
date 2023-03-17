@@ -24,9 +24,6 @@ public class Flying : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(anim.gameObject.name);
-        Debug.Log(anim.gravityWeight);
-        Debug.Log(anim.velocity);
         if (Activate)
         {
             if (canFly == true)
@@ -55,7 +52,6 @@ public class Flying : MonoBehaviour
                 cancelGravity = new Vector3(0f, 9.81f, 0f);
                 charControls.Move(cancelGravity * Time.deltaTime);
             }
-            Debug.Log(charControls.velocity);
             if (Input.GetButton("Crouch"))
             {
                 cancelGravity = new Vector3(0f, -9.81f, 0f);

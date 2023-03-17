@@ -394,6 +394,7 @@
 "Assets/Scripts/Character/HealthBar.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/InventorySlot.cs"
+"Assets/SpawnEnemy.cs"
 -langversion:8.0
 
 /deterministic

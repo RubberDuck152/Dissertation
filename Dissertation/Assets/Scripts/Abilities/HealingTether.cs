@@ -43,6 +43,7 @@ public class HealingTether : MonoBehaviour
     IEnumerator CooldownTimer()
     {
         yield return new WaitForSeconds(CooldownTime);
+        Destroy(newTether);
         canSpawn = true;
         Activate = false;
     }
