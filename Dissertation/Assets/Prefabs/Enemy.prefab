@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7589912635592294311}
   - component: {fileID: 7589912635592294310}
   - component: {fileID: 7589912635592294305}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 7589912635771769088}
   - component: {fileID: 7589912635771769089}
   - component: {fileID: 7458160900795051391}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7589912636772632364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WeaponSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

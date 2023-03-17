@@ -62,6 +62,13 @@ public class Projectile : MonoBehaviour
             StartCoroutine(DestroyObject());
             DelayTime = 0;
         }
+
+        if (collision.gameObject.layer == 9)
+        {
+            collision.gameObject.GetComponent<Enemy>().currentHP -= DamageValue;    
+            StartCoroutine(DestroyObject());
+            DelayTime = 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
